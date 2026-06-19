@@ -1,9 +1,7 @@
-const POSTER_DATA = window.POSTER_DATA;
-const LOGO_DATA = window.LOGO_DATA;
-const pu = "url('data:image/jpeg;base64," + POSTER_DATA + "')";
+const base = window.location.pathname.replace(/\/[^\/]*$/, '/'); const pu = "url('" + base + "poster.jpg')";
 document.getElementById('bgPoster').style.backgroundImage = pu;
 ['cb1','cb2','cb3','cb4'].forEach(function(id){ document.getElementById(id).style.backgroundImage = pu; });
-document.getElementById('logoImg').src = "data:image/png;base64," + LOGO_DATA;
+document.getElementById('logoImg').src = base + 'logo.png';
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 let W, H;
